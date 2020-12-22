@@ -24,8 +24,8 @@ export class HeroDetailComponent implements OnInit {
 
   getHero(): void {
     // "+" for convert string to number
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id).subscribe((hero) => {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.heroService.getHero(id ? +id: 11).subscribe((hero) => {
       this.hero = hero;
     })
   }
